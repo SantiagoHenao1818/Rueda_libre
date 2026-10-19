@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+.title{
+    color: aliceblue;
+}
+.setting-logo{
+    width: 100%;
+  max-width: 400px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
