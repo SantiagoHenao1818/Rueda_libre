@@ -1,13 +1,125 @@
-body{
-    background-color: black;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-border-box;
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 20px;
+}
+
+nav.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 12px 28px;
+
+   
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.1rem;
     color: aliceblue;
 }
-.title{
-    color: aliceblue;
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
 }
-.setting-logo{
+
+.nav-links li a {
+    color: rgba(240, 248, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+.Boton-1 {
+    background: linear-gradient(135deg, #ff5e62, #ff9966);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Boton-1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
+}
+
+.title {
+    color: aliceblue;
+    text-align: center;
+}
+
+.presentation{
+    object-position: center;
+}
+.portada-bici{
+    border-radius: 40px;
+    
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 8px;
+    color: #aaa;
+}
+
+.setting-logo {
     width: 100%;
-  max-width: 400px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    max-width: 400px;
+    display: block;
+    margin: 15px 0;
+}
+
+.section-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    border-top: 1px solid #222;
+    margin-top: 50px;
 }
