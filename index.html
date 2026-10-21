@@ -10,59 +10,120 @@
 
     <nav class="Navbar">
         <div class="logo">
-            <img class="logo-icon" src="../rueda.libre/img/Logo.svg" alt="Logo-parche">
+            <img class="logo-icon" src="img/Logo.svg" alt="Logo-parche">
             <span class="logo-text">Parche y Pedal</span>
         </div>
-<section class="presentation">
+        
         <ul class="nav-links">
             <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
             <li><a href="#servicios">Nuestros servicios</a></li>
-            <li><a href="#encuentranos">Encuéntranos</a></li>
+            <li><a href="#como-alquilar">Cómo Alquilar</a></li>
         </ul>
-</section>
-        <button class="Boton-1">Cómo Alquilar</button>
+
+      <button class="Boton-1" onclick="location.href='tarifas.html'">Tarifas</button>
     </nav>
 
     <header class="hero">
-        <h1 class="title">Parche y Pedal</h1>
-        <p class="subtitle">Tu cicla lista, el parche armado y Medellín a tus pies.</p>
-        <img src="../rueda.libre/img/portada.jpg" alt="portada-bicicleta" class="portada-bici">
+        <div class="hero-card">
+            <h1 class="title">Parche y Pedal</h1>
+            <p class="subtitle">Tu cicla lista, el parche armado y Medellín a tus pies.</p>
+            <section id="quienes-somos" class="section-container">
+            <h2>¿Quiénes somos?</h2>
+            <p class="subtitle">
+                No somos una simple tienda de alquiler; somos un parche de amigos enamorados de las dos ruedas y de las mejores, más duras y hermosas lomas de Medellín. Queremos que te olvides del tráfico, armes tu parche y salgas a rodar con la tranquilidad de tener una cicla 100% confiable y lista para la aventura. 
+                ¡Aquí tu única misión es pedalear y disfrutar el paisaje!.</p>
+        </section>
+        </div>
+        
+        <div class="hero-image-wrapper">
+            <img src="img/Cicla.2.jpg" alt="portada-bicicleta" class="portada-bici">
+        </div>
     </header>
    
     <main>
-        <section id="quienes-somos" class="section-container">
-            <h2>¿Quiénes somos?</h2>
-            <p class="slogan">Tu cicla, tu parche, tu ciudad.</p>
-        </section>
-
+        
         <section id="servicios" class="section-container">
             <h2>Nuestros Servicios</h2>
-            <article>
-                <h3>Alquiler Urbano Diario</h3>
-                <p>Ideal para trayectos diarios o salidas espontáneas.</p>
-            </article>
-            <article>
-                <h3>Rutas guiadas</h3>
-                <p>Atrévete a conquistar las montañas con mejor vista a la ciudad.</p>
-            </article>
-            <article>
-                <h3>Reparaciones técnicas</h3>
-                <p>Trae tu bicicleta, acá te la reparamos al igual que vendemos accesorios para tu bici.</p>
-            </article>
+            <div class="servicios-grid">
+                
+
+                <div class="card-servicio">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Alquiler Urbano Diario</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Ideal para trayectos diarios o salidas espontáneas por la ciudad con total comodidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="card-servicio">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Rutas guiadas</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Atrévete a conquistar las montañas con la mejor vista y guías locales expertos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="card-servicio">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Reparaciones técnicas</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Trae tu bicicleta, acá te la reparamos al instante y vendemos accesorios especializados.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <section class="section-container como-alquilar">
+        <!-- SECCIÓN CÓMO ALQUILAR MEJORADA CON TARJETAS DE PASOS -->
+        <section id="como-alquilar" class="section-container">
             <h2>¿Cómo Alquilar?</h2>
-            <ol>
-                <li>Elige el tipo de cicla o servicio que mejor se adapte a tu plan.</li>
-                <li>Escríbenos por WhatsApp para confirmar disponibilidad y fecha.</li>
-                <li>Acércate a nuestro punto de partida o solicita entrega a domicilio.</li>
-                <li>¡Disfruta el recorrido y rueda libre por la ciudad!</li>
-            </ol>
+            
+            <div class="pasos-grid">
+                <div class="paso-card">
+                    <div class="paso-numero">01</div>
+                    <p>Elige el tipo de cicla o servicio que mejor se adapte a tu plan.</p>
+                </div>
+                <div class="paso-card">
+                    <div class="paso-numero">02</div>
+                    <p>Escríbenos por WhatsApp para confirmar disponibilidad y fecha.</p>
+                </div>
+                <div class="paso-card">
+                    <div class="paso-numero">03</div>
+                    <p>Acércate a nuestro punto de partida o solicita entrega a domicilio.</p>
+                </div>
+                <div class="paso-card">
+                    <div class="paso-numero">04</div>
+                    <p>¡Disfruta el recorrido y rueda libre por la ciudad!</p>
+                </div>
+            </div>
 
-            <h3>Beneficios por rodar con nosotros</h3>
-            <img class="setting-logo" src="../rueda.libre/img/tienda.jpeg" alt="Foto tienda">
-            <ul>
-                <li>Ciclas en constante mantenimiento para garantizar tu seguridad en cada loma.</li>
-                <li>Atención cercana y recomendaciones de rutas personalizadas por locales.</li>
-                <li>Planes flexibles que se ajustan al tiempo y ritmo
+            <!-- Bloque de Beneficios con la foto de la tienda -->
+            <div class="beneficios-container">
+                <h2>Beneficios por rodar con nosotros</h2>
+                <img class="setting-logo" src="img/tienda.jpeg" alt="Foto tienda">
+                <ul>
+                    <li>Ciclas en constante mantenimiento para garantizar tu seguridad en cada loma.</li>
+                    <li>Atención cercana y recomendaciones de rutas personalizadas por locales.</li>
+                    <li>Planes flexibles que se ajustan a tu tiempo y ritmo de pedaleo.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Parche y Pedal. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
