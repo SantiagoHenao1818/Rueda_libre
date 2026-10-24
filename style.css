@@ -63,11 +63,22 @@ nav.Navbar {
     color: rgba(240, 248, 255, 0.8);
     text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 30px;
+
 }
 
 .nav-links li a:hover {
+    background-color: rgba(255, 153, 102, 0.2);
     color: #ff9966;
+    color: rgba(240, 248, 255, 0.8);
+}
+
+nav.Navbar .active {
+    background: linear-gradient(135deg, #ff5e62, #ff9966);
+    color: rgba(240, 248, 255, 0.8);
+    font-weight: 700;
 }
 
 #quienes-somos, 
@@ -322,7 +333,7 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Tabla principal */
+
 .tabla-tarifas {
     width: 100%;
     border-collapse: collapse;
