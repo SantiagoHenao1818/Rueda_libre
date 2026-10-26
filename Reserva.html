@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
-    <link rel="stylesheet" href="reservas.css">
+    <title>Reserva || Rueda y Pedal</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reservas.css">
 </head>
 <body>
-     <nav class="Navbar">
+
+    <nav class="Navbar">
         <div class="logo">
             <img class="logo-icon" src="img/Logo.svg" alt="Logo-parche">
             <span class="logo-text">Rueda y Pedal</span>
@@ -17,72 +18,112 @@
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="tarifas.html">Tarifas</a></li>
-            <li><a href="reservas.html" class="active">Reservas</a></li>
+            <li><a href="Reserva.html" class="active">Reserva</a></li>
         </ul>
-      <a href="https://www.google.com/maps?client=opera-gx&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=co&sa=X&geocode=Ke9OEQ4_KUSOMYHAx0TdDGGZ&daddr=Cl.+16+%2355-129,+Guayabal,+Medellín,+Guayabal,+Medellín,+Antioquia" target="_blank" rel="noopener noreferrer">
-            
-            </a>
-      <a href="https://www.google.com/maps?client=opera-gx&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=co&sa=X&geocode=Ke9OEQ4_KUSOMYHAx0TdDGGZ&daddr=Cl.+16+%2355-129,+Guayabal,+Medellín,+Guayabal,+Medellín,+Antioquia" target="_blank" rel="noopener noreferrer">
-            <button class="Boton-1 dapage">Ubicacion</button>
-            </a>
-    </a>
+
+        <button class="Boton-1" onclick="location.href='index.html'">Inicio</button>
     </nav>
 
+    
+    <main>
+        <section class="section-container">
+            <h2 class="title-reserv">Reserva tu Bici</h2>
+            
+            <div class="hero-card form-organizado">
+                <form action="#" method="POST">
+                    
+                    <div class="form-section">
+                        <div class="form-section-title">1. Datos Personales</div>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Ej. Santiago Pérez">
+                            </div>
 
+                            <div class="form-group">
+                                <label for="documento">Documento *</label>
+                                <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Debe contener entre 6 y 10 dígitos numéricos" placeholder="Ej. 3000123456">
+                            </div>
+                        </div>
 
-    <form action="/my-handling-form-page" method="post">
-  <p>
-    <label for="name">Nombre Completo:</label>
-    <input type="text" id="name" name="user_name" />
-  </p>
-  <p>
-    <label for="mail">Email:</label>
-    <input type="email" id="mail" name="user_email" />
-  </p>
-  <label for="pet-select">Tipo de documento</label>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="correo">Correo *</label>
+                                <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com">
+                            </div>
 
-<select name="ids" id="tipo-id">
-  <option value="cc">Cedula de Ciudadania</option>
-  <option value="ti">Tarjeta de Identidad</option>
-  <option value="ce">Cedula de Extrajeria</option>
-  <option value="pasaporte">Pasaporte</option>
-  </select>
-  <section>
-  <h2>Payment information</h2>
-  <p>
-    <label for="card">
-      <span>Card type:</span>
-    </label>
-    <select id="card" name="user-card">
-      <option value="visa">Visa</option>
-      <option value="mc">Mastercard</option>
-      <option value="amex">American Express</option>
-    </select>
-  </p>
-  <p>
-    <label for="number">Card number *:</label>
-    <input type="tel" id="number" name="card-number" required />
-  </p>
-  <p>
-    <label for="expiration">Expiration date *:</label>
-    <input
-      type="text"
-      id="expiration"
-      name="expiration"
-      required
-      placeholder="MM/YY"
-      pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
-  </p>
-</section>
-<section>
-  <p>
-    <button type="submit">Validar informacion</button>
-  </p>
-</section>
-</form> 
+                            <div class="form-group">
+                                <label for="celular">Celular *</label>
+                                <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="Debe ser un número de 10 dígitos y comenzar por 3" placeholder="Ej. 3001234567">
+                            </div>
+                        </div>
+                    </div>
 
-<footer>
-        <p>&copy; 2026 Parche y Pedal. Todos los derechos reservados.</p>
+                    <div class="form-section">
+                        <div class="form-section-title">2. Detalles del Alquiler</div>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="fecha_alquiler">Fecha del alquiler *</label>
+                                <input type="date" id="fecha_alquiler" name="fecha_alquiler" required min="2026-11-01" max="2026-12-31">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad de bicicletas *</label>
+                                <input type="number" id="cantidad" name="cantidad" required min="1" max="6" value="1">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="tipo_bicicleta">Tipo de bicicleta *</label>
+                                <select id="tipo_bicicleta" name="tipo_bicicleta" required>
+                                    <option value="">-- Seleccione una opción --</option>
+                                    <option value="montana">Montaña</option>
+                                    <option value="ruta">Ruta</option>
+                                    <option value="urbana">Urbana</option>
+                                    <option value="electrica">Eléctrica</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="plan">Plan de alquiler *</label>
+                                <select id="plan" name="plan" required>
+                                    <option value="">-- Seleccione una opción --</option>
+                                    <option value="horas">Por Horas</option>
+                                    <option value="dia">Día Completo</option>
+                                    <option value="semana">Semanal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title">3. Observaciones</div>
+                        
+                        <div class="form-group">
+                            <label for="comentarios">Comentarios</label>
+                            <textarea id="comentarios" name="comentarios" maxlength="300" rows="3" placeholder="Comentarios opcionales (máx. 300 caracteres)"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="politicas" name="politicas" required>
+                        <label for="politicas">Acepto las políticas de alquiler *</label>
+                    </div>
+
+          
+                    <button type="submit" class="Boton-1" style="width: 100%; padding: 14px; font-size: 1.05rem;">Enviar Solicitud</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rueda y Pedal. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
