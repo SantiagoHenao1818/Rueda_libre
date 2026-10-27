@@ -107,6 +107,7 @@
     cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
     .hero-card.form-organizado {
         padding: 20px 15px;
