@@ -467,18 +467,25 @@ footer {
 .flota-clasica {
   display: block;
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 17rem;
   border-radius: 12px;
   margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.move-ulti{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-column: span 4;
+  
 
 }
+
+
  .price{
     padding: 1rem;
         color: #ff9966;
     }
 
-    .paso-card main{
-        display:;
-    }
 
