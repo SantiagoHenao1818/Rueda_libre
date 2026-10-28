@@ -1,26 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalogo</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-     <nav class="Navbar">
-        <div class="logo">
-            <img class="logo-icon" src="img/Logo.svg" alt="Logo-parche">
-            <span class="logo-text">Rueda y Pedal</span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="tarifas.html" class="active">Tarifas</a></li>
-            <li><a href="Reserva.html">Reserva</a></li>
-            <li><a href="catalogo.html">Catalogo</a></li>
-        </ul>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="Navbar">
+      <div class="logo">
+        <img class="logo-icon" src="img/Logo.svg" alt="Logo-parche" />
+        <span class="logo-text">Rueda y Pedal</span>
+      </div>
 
-      <button class="Boton-1" onclick="location.href='Reserva.html'">Reserva</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tarifas.html">Tarifas</a></li>
+        <li><a href="Reserva.html">Reserva</a></li>
+        <li><a href="" class="active">Catalogo</a></li>
+      </ul>
+
+      <button class="Boton-1" onclick="location.href = 'index.html'">
+        Inicio
+      </button>
     </nav>
-</body>
+    <section id="como-alquilar" class="section-container">
+      <h2 class="title-flota">Nuestra Flota</h2>
+      <div class="pasos-grid">
+        <div class="paso-card">
+          
+          <img
+            src="./img/Urbana-clasica.jpg"
+            alt="urbana-clasica"
+            class="flota-clasica"
+          />
+          <div class="paso-numero">Urbana Clasica</div>
+          <p>Comoda y liviana para la cicloruta</p>
+          <p class="price">$ 10.000</p>
+          <button class="Boton-1">Reservar</button>
+        </div>
+        <div class="paso-card">
+          <img
+            src="./img/Plegable.jpg"
+            alt="urbana-clasica"
+            class="flota-clasica"
+          />
+          <div class="paso-numero">Urbana Plegable</div>
+          <p>Se dobla en segundos; idelas para combinar con el metro.</p>
+          <p class="price">$ 12.000</p>
+          <button class="Boton-1">Reservar</button>
+        </div>
+        <div class="paso-card">
+          <img
+            src="./img/mountain-trail.jpg"
+            alt="urbana-clasica"
+            class="flota-clasica"
+          />
+          <div class="paso-numero">Montaña Trail</div>
+          <p>Suspension delatera y 21 cambios para las subidas.</p>
+          <p class="price">$ 15.000</p>
+          <button class="Boton-1">Reservar</button>
+        </div>
+        <div class="paso-card">
+          <img
+            src="./img/adventure.jpg"
+            alt="urbana-clasica"
+            class="flota-clasica gravel"
+          />
+          <div class="paso-numero">Gravel Aventura</div>
+          <p>Para turas mixtas de asfalto y destapado.</p>
+          <p class="price">$ 18.000</p>
+          <button class="Boton-1">Reservar</button>
+        </div>
+        <section class="move-ulti">
+          <div class="paso-card main">
+            <img
+              src="./img/electrica-urbana.jpg"
+              alt="urbana-clasica"
+              class="flota-clasica"
+            />
+            <div class="paso-numero">Electronica Urbana</div>
+            <p>Asistencia electrica con 45 km de autonomia.</p>
+            <p class="price">$ 25.000</p>
+            <button class="Boton-1">Reservar</button>
+          </div>
+          <div class="paso-card main">
+            <img
+              src="./img/infantil.jpg"
+              alt="urbana-clasica"
+              class="flota-clasica"
+            />
+            <div class="paso-numero">Infantil</div>
+            <p>Para niños de 6 a 10 años.</p>
+            <p class="price">$ 8.000</p>
+            <button class="Boton-1">Reservar</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Rueda y Pedal. Todos los derechos reservados.</p>
+
+      <section class="Footer">
+        <div class="footer-servicios">
+          <h3 class="title-footer">Horario de atencion</h3>
+          <a href="./index.html">
+            <p>Inicio</p>
+          </a>
+          <a href="./tarifas.html">
+            <p>Tarifas</p>
+          </a>
+          <a href="./Reserva.html">
+            <p>Reservas</p>
+          </a>
+          <a href="./Catalogo.html">
+            <p>Catalogo</p>
+          </a>
+        </div>
+
+        <div class="footer-Horario">
+          <h3 class="title-footer">Horario de atencion</h3>
+          <p>Lunes a viernes</p>
+          <p>7:00 a.m. a 7:00 p.m.</p>
+          <p>Sabados, domingos y festivos</p>
+          <p>6:00 a.m. a 2:00 p.m.</p>
+        </div>
+      </section>
+    </footer>
+  </body>
 </html>

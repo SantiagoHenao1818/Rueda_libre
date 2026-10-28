@@ -265,7 +265,7 @@ nav.Navbar .active {
 }
 
 .paso-numero {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #ff9966;
   margin-bottom: 10px;
@@ -368,7 +368,7 @@ footer {
   font-weight: bold;
   display: inline-block;
 }
-
+.cover
 .badge.facil {
   background: rgba(46, 204, 113, 0.2);
   color: #2ecc71;
@@ -470,13 +470,14 @@ footer {
   height: 17rem;
   border-radius: 12px;
   margin-bottom: 15px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .move-ulti{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  justify-items: stretch;
+  gap: 1rem;
   grid-column: span 4;
   
 
