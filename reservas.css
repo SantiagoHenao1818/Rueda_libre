@@ -64,9 +64,14 @@
     color: aliceblue;
     font-family: inherit;
     font-size: 0.9rem;
-    outline: none;
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #ff9966;
 }
 
 .form-group input:focus,

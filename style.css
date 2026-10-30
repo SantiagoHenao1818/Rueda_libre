@@ -68,7 +68,6 @@ nav.Navbar {
 
 .nav-links li a:hover {
   background-color: rgba(255, 153, 102, 0.2);
-  color: #ff9966;
   color: rgba(240, 248, 255, 0.8);
 }
 
@@ -76,6 +75,24 @@ nav.Navbar .active {
   background: linear-gradient(135deg, #ff5e62, #ff9966);
   color: rgba(240, 248, 255, 0.8);
   font-weight: 700;
+}
+
+.nav-links a.active:hover {
+  color: #0a0a0a;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid aliceblue;
+  outline-offset: 3px;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 #quienes-somos,
@@ -368,7 +385,6 @@ footer {
   font-weight: bold;
   display: inline-block;
 }
-.cover
 .badge.facil {
   background: rgba(46, 204, 113, 0.2);
   color: #2ecc71;
@@ -464,6 +480,13 @@ footer {
     color: aliceblue;
   }
 }
+
+.footer-servicios a:hover {
+  color: #ff9966;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 .flota-clasica {
   display: block;
   width: 100%;
@@ -488,5 +511,3 @@ footer {
     padding: 1rem;
         color: #ff9966;
     }
-
-

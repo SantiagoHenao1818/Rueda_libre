@@ -215,3 +215,103 @@ las transparencias y superposiciones pueden alterar el contraste final según
 el fondo que haya detrás. El mapa es una guía de uso y no implica que los
 colores problemáticos existentes en todos los componentes ya hayan sido
 corregidos en las hojas CSS.
+
+## 10. DevTools: herencia, especificidad, estados y box model
+
+### Herencia de propiedades
+
+En DevTools, inspeccioné un párrafo dentro de una tarjeta `.paso-card` y
+comparé los valores de **Computed** con los del `body`:
+
+| Propiedad | Valor en `body` | Valor en el párrafo | Comprobación |
+|---|---|---|---|
+| `font-family` | `Arial, Helvetica, sans-serif` | `Arial, Helvetica, sans-serif` | Se hereda |
+| `padding-top` | `100px` | `0px` | No se hereda; el reset universal `* { padding: 0; }` lo establece en cero |
+
+### Clase que no aplicaba y cálculo de especificidad
+
+En DevTools > Styles y Computed de `tarifas.html`, el elemento tenía las clases
+`badge facil`, pero el estilo verde no aparecía: la regla escrita era
+`.cover .badge.facil`, que requiere un ancestro con clase `cover`; ese ancestro
+no existe en el HTML.
+
+- `.cover .badge.facil`: especificidad `0-3-0` (tres selectores de clase).
+- `.badge`: especificidad `0-1-0` (un selector de clase).
+- La regla de mayor especificidad no se aplicaba porque no coincidía con la
+  estructura HTML; la especificidad solo se compara entre reglas que sí
+  coinciden. Corregí el selector a `.badge.facil` (`0-2-0`), que sí coincide y
+  aplica el fondo, texto y borde de la etiqueta Fácil.
+
+También comprobé un conflicto real al pasar el cursor sobre un enlace activo
+del menú:
+
+- `.nav-links li a:hover`: `0-2-2` (dos clases/pseudoclases y dos elementos).
+- `nav.Navbar .active`: `0-2-1` (dos clases y un elemento).
+- Ambas reglas coinciden con el enlace activo al pasar el cursor. La regla
+  `:hover` tiene mayor especificidad por tener dos selectores de elemento,
+  por lo que su color prevalece sobre la regla `.active`, aunque esta aparezca
+  después.
+- Añadí `.nav-links a.active:hover` (`0-3-1`), que prevalece sobre ambas para
+  conservar el texto oscuro legible del enlace activo sobre su degradado.
+  También eliminé una declaración `color` duplicada en la regla hover.
+
+### Estados hover y focus
+
+Añadí señales visuales para los controles interactivos:
+
+- Los enlaces del menú resaltan con fondo y color al pasar el cursor; los
+  enlaces del pie de página cambian a naranja y muestran subrayado en `:hover`.
+- Los botones conservan el cambio de sombra y tamaño en `:hover`.
+- Campos de texto, listas y áreas de texto resaltan el borde al pasar el
+  cursor; al enfocarlos también cambian el borde y la sombra.
+- Enlaces, botones, campos, listas, áreas de texto y casilla muestran un
+  contorno claro de `3px` con separación de `3px` en `:focus-visible`.
+
+Verifiqué el enlace activo del menú en hover, y recorrí con Tab enlaces,
+botones y campos del formulario: los elementos enfocados mostraron el
+contorno visible.
+
+### Medición de box-sizing
+
+Medí una tarjeta `.paso-card` en DevTools en el viewport de `1273px`. Para
+comparar de forma controlada, fijé el ancho CSS a `275px` y cambié solo
+`box-sizing`:
+
+| `box-sizing` | Ancho total observado |
+|---|---:|
+| `border-box` | `275px` |
+| `content-box` | `327px` |
+
+Con `content-box`, se sumaron `50px` de padding horizontal (`25px` por lado) y
+`2px` de borde al ancho de contenido. En el CSS del sitio ya existe
+`box-sizing: border-box` en el reset universal, por lo que `border-box` es el
+valor habitual de la tarjeta; el ancho se fijó temporalmente solo para hacer
+una comparación equivalente.
+
+## 11. Cierre de los MiniRetos de la semana
+
+### Lo construido
+
+- **Estructura y primera petición:** sitio con página de inicio, páginas
+  internas y recursos gráficos; documentación de URL local, método HTTP y
+  respuesta esperada, pendiente de confirmar esos datos en Network para la
+  sesión de Live Server utilizada.
+- **Diseño y responsive:** navegación, portada y distribución de componentes
+  con Flexbox; tarjetas y formularios con Grid; ajustes para pantallas
+  estrechas.
+- **Navegación y reserva:** enlaces entre inicio, tarifas, reserva y catálogo;
+  formulario con restricciones nativas y tabla de pruebas de validación.
+- **Estilos y accesibilidad:** mapa de colores y contraste, revisión de
+  herencia y especificidad, arreglo del estilo de las etiquetas de nivel, y
+  estados hover y focus visibles.
+- **Comparación pendiente:** Bootstrap todavía no está implementado; el sitio
+  actual sirve como referencia para una comparación posterior.
+
+### Qué mejoraría
+
+Conectaría el formulario a un servicio real y dirigiría cada botón **Reservar**
+del catálogo a la página de reserva. También revisaría las etiquetas `alt`, el
+idioma declarado en todas las páginas y los contrastes insuficientes del
+degradado de los botones; probaría el sitio en más tamaños de pantalla y con
+teclado/lector de pantalla. Finalmente, implementaría Bootstrap en una versión
+de comparación sin perder esta referencia del diseño actual.
