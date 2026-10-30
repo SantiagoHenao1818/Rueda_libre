@@ -288,7 +288,91 @@ Con `content-box`, se sumaron `50px` de padding horizontal (`25px` por lado) y
 valor habitual de la tarjeta; el ancho se fijó temporalmente solo para hacer
 una comparación equivalente.
 
-## 11. Cierre de los MiniRetos de la semana
+## 11. Decisiones entre Flexbox y Grid
+
+Las decisiones se basan en las dimensiones del contenido que se organiza:
+Flexbox resuelve principalmente una dirección (fila o columna); Grid controla
+filas y columnas como una cuadrícula. En el formulario completo, las secciones
+se apilan con el flujo normal del documento, sin aplicar Flexbox ni Grid al
+contenedor exterior.
+
+| Caso | Técnica usada | Criterio de una o dos dimensiones |
+|---|---|---|
+| Portada (`.hero`) | Flexbox | Alinea en una fila el texto y la imagen; en móvil cambia a una columna, conservando una sola dirección de organización a la vez. |
+| Galería de servicios/flota (`.servicios-grid`, `.pasos-grid`) | Grid | Distribuye varias tarjetas en filas y columnas; `auto-fit` y `minmax()` ajustan las columnas disponibles. |
+| Reservas (contenedor exterior del formulario) | Flujo normal, sin Flexbox/Grid | Las secciones personales, alquiler y observaciones aparecen una debajo de otra; es una dimensión y el HTML ya proporciona ese orden. |
+| Fila del formulario (`.form-grid-2`) | Grid | Presenta dos campos lado a lado y controla la distribución por filas y columnas; bajo `768px` pasa a una sola columna. |
+| Encabezado (`.Navbar`) | Flexbox | Alinea logo, navegación y botón en una dirección; bajo `768px` los apila verticalmente. |
+| Pie (`.Footer`) | Flexbox | Coloca en una fila los enlaces y el horario; organiza un eje, no una matriz de tarjetas. En móvil permanece en fila y puede quedar apretado. |
+
+### Columnas observadas en la flota
+
+Revisé `Catalogo.html` en el navegador con el viewport emulado a `1280px`,
+`900px` y `500px`. El CSS tiene un breakpoint principal en `768px`; los tres
+anchos son tamaños de prueba, no tres breakpoints.
+
+| Ancho del viewport | Columnas calculadas en `.pasos-grid` | Qué se ve en la flota |
+|---:|---:|---|
+| `1280px` | 4 | Las cuatro tarjetas principales caben en una fila; las dos últimas bicicletas están en una subcuadrícula de 2 columnas. No se detectó desbordamiento horizontal del documento. |
+| `900px` | 4 | Se mantienen cuatro columnas; la cuarta tarjeta sobresale aproximadamente `2px` del viewport. La subcuadrícula inferior conserva 2 columnas. |
+| `500px` | 4 | El Grid sigue creando cuatro columnas, pero solo caben completas las dos primeras tarjetas; la tercera queda cortada y la cuarta queda fuera de pantalla. El documento llega a `776px` de ancho desplazable. La subcuadrícula de las dos bicicletas finales también se extiende fuera del viewport. |
+
+Por tanto, el sitio no tiene tres breakpoints: tiene reglas móviles que se
+activan en `768px` y las columnas de la flota cambian automáticamente según el
+espacio. La observación de `500px` muestra un problema real; no afirmo que allí
+no haya scroll horizontal.
+
+### Comportamiento del encabezado y del pie al estrechar la ventana
+
+- Entre `1280px` y `900px`, el encabezado permanece en una fila y mide
+  aproximadamente `66px` de alto. A `500px`, se activa la regla de hasta
+  `768px`: logo, enlaces y botón se apilan y el encabezado llega a unos
+  `315px` de alto.
+- El pie mantiene su distribución Flexbox en fila a los tres anchos. A `500px`
+  sus dos grupos (enlaces y horario) quedan uno al lado del otro con poco
+  espacio y aumenta su altura por el ajuste del contenido. No cambia a columna.
+- En el sitio estrecho, el espacio superior de `180px` declarado para el
+  contenido es menor que los aproximadamente `315px` del encabezado fijo; en
+  algunas páginas el encabezado puede superponerse al comienzo del contenido.
+  Queda registrado como pendiente responsive.
+
+## 12. Problemas responsive y soluciones
+
+### Ajustes que ya existen
+
+1. **Portada demasiado ancha en móvil:** `.hero` permite `flex-wrap` y, hasta
+   `768px`, cambia a columna para que texto e imagen no compitan por una fila
+   estrecha.
+2. **Menú superior apretado:** hasta `768px`, `.Navbar` y `.nav-links` apilan
+   sus elementos. El contenido recibe `180px` de espacio superior para
+   separarlo del encabezado fijo; en `500px` ese espacio aún puede ser menor
+   que la altura real del menú, así que no resuelve por completo la
+   superposición.
+3. **Campos de reserva demasiado estrechos:** `.form-grid-2` cambia de dos
+   columnas a una a `768px` o menos.
+4. **Tabla de tarifas ancha:** `.table-responsive` contiene el ancho adicional
+   mediante desplazamiento horizontal dentro de la tabla, en vez de ampliar
+   toda la página.
+
+### Pendientes observados
+
+- **Flota a `500px`:** `.move-ulti` ocupa cuatro columnas del Grid exterior
+  (`grid-column: span 4`) aunque el viewport sea angosto. Resultado observado:
+  cuatro columnas calculadas y ancho desplazable de `776px`. Está pendiente
+  ajustar el layout; no se modificó el CSS para respetar el alcance de esta
+  entrega.
+- **Encabezado fijo a `500px`:** sus `315px` de alto superan el espacio superior
+  declarado de `180px`; puede cubrir parte del contenido. Requiere revisar ese
+  espacio en una futura mejora responsive.
+- **Pie a `500px`:** los dos grupos de `.Footer` siguen en una fila y quedan
+  ajustados; una futura revisión podría apilarlos en móvil.
+
+Comprobé que los cuatro enlaces del menú siguen presentes, que se muestran las
+seis bicicletas con sus seis botones y que el formulario conserva sus campos
+obligatorios y rangos de fecha/cantidad. No cambié archivos HTML ni CSS en esta
+actualización; solo registré decisiones y resultados en la bitácora.
+
+## 13. Cierre de los MiniRetos de la semana
 
 ### Lo construido
 
