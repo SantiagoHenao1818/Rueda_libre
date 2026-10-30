@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalogo</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./catalogo.css" />
   </head>
   <body>
     <nav class="Navbar">
@@ -12,7 +13,13 @@
         <img class="logo-icon" src="img/Logo.svg" alt="Logo-parche" />
         <span class="logo-text">Rueda y Pedal</span>
       </div>
+      <input type="checkbox" id="menu" class="menu-checkbox" aria-label="Mostrar navegación" />
 
+<label for="menu" class="menu-hamburguesa">
+  <span class="menu-icon" aria-hidden="true"></span>
+  <span class="menu-icon" aria-hidden="true"></span>
+  <span class="menu-icon" aria-hidden="true"></span>
+</label>
       <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="tarifas.html">Tarifas</a></li>
@@ -26,7 +33,7 @@
     </nav>
     <section id="como-alquilar" class="section-container">
       <h2 class="title-flota">Nuestra Flota</h2>
-      <div class="pasos-grid">
+      <div class="pasos-grid cards">
         <div class="paso-card">
           
           <img

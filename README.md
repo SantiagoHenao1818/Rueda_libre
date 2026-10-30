@@ -20,11 +20,6 @@ La URL de referencia para Live Server con su configuración predeterminada es:
 - **Método:** `GET`
 - **Estado esperado:** `200 OK` (el servidor encontró y entregó `index.html`).
 
-> **Pendiente de confirmar:** esta URL y el estado son los valores habituales
-> de Live Server, pero deben confirmarse en DevTools > Network. Si Live Server
-> muestra otra URL o puerto, reemplaza estos datos por los de la petición real
-> después de recargar `index.html` y seleccionar la solicitud de tipo
-> `document`.
 
 ## 2. Ruta inexistente
 
@@ -54,8 +49,10 @@ Prueba sugerida: `http://127.0.0.1:5500/promociones.html`
 
 Flexbox se eligió para alinear elementos en una dimensión: logo y enlaces de
 la navegación, y texto e imagen de la portada. En pantallas de hasta `768 px`
-la portada pasa a una columna y la navegación apila sus elementos; `flex-wrap`
-permite que la portada se acomode si falta espacio.
+la portada pasa a una columna y la navegación muestra un botón de hamburguesa
+de tres líneas; al activarlo, despliega los enlaces debajo del logo. En
+escritorio se mantienen visibles los enlaces. El control también se puede
+activar con teclado.
 
 Grid se eligió para colecciones en dos dimensiones, como tarjetas de servicios,
 pasos e información. Las columnas con `repeat(auto-fit, minmax(...))` se
@@ -383,6 +380,10 @@ actualización; solo registré decisiones y resultados en la bitácora.
 - **Diseño y responsive:** navegación, portada y distribución de componentes
   con Flexbox; tarjetas y formularios con Grid; ajustes para pantallas
   estrechas.
+- **Menú hamburguesa:** en pantallas de hasta `768 px` aparecen tres líneas
+  junto al logo y, al activar el ícono, se despliegan los enlaces debajo. En
+  escritorio se mantienen visibles los enlaces habituales; el control también
+  se puede activar con teclado. Está implementado en las cuatro páginas.
 - **Navegación y reserva:** enlaces entre inicio, tarifas, reserva y catálogo;
   formulario con restricciones nativas y tabla de pruebas de validación.
 - **Estilos y accesibilidad:** mapa de colores y contraste, revisión de
