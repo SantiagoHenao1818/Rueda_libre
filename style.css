@@ -557,9 +557,16 @@ footer {
   justify-items: stretch;
   gap: 1rem;
   grid-column: span 4;
+}
+
+.Boton-wpp{
+  width: 50px;
+  height: auto;
+  
+  }
   
 
-}
+
 
 @media (max-width: 1200px) {
   .move-ulti {
