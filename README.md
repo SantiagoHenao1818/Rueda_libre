@@ -400,3 +400,239 @@ idioma declarado en todas las páginas y los contrastes insuficientes del
 degradado de los botones; probaría el sitio en más tamaños de pantalla y con
 teclado/lector de pantalla. Finalmente, implementaría Bootstrap en una versión
 de comparación sin perder esta referencia del diseño actual.
+
+
+## 14. Migración del sitio a Bootstrap 5.3.8
+
+### 14.1. Proceso de migración
+
+Se realizó una adaptación del sitio web Rueda y Pedal utilizando Bootstrap 5.3.8 como framework de estilos. El objetivo fue reemplazar progresivamente la presentación basada en CSS propio por componentes y clases prediseñadas de Bootstrap, manteniendo la estructura general, el contenido y la identidad visual del proyecto.
+
+El trabajo se desarrolló en una rama independiente llamada `bootstrap`, con el propósito de conservar la versión anterior en `main` y permitir trabajar en la nueva implementación sin modificar directamente la rama principal.
+
+La migración se realizó sobre las cuatro páginas principales del proyecto:
+
+- `index.html`: página de inicio.
+- `tarifas.html`: información y tabla de tarifas.
+- `Catalogo.html`: catálogo de bicicletas disponibles.
+- `Reserva.html`: formulario para solicitar una reserva.
+
+Se conservaron los nombres de los archivos y las rutas de las páginas para evitar modificar innecesariamente los enlaces internos del proyecto.
+
+### 14.2. Incorporación de Bootstrap mediante CDN
+
+Se incorporó Bootstrap 5.3.8 mediante su CDN, agregando la hoja de estilos dentro del elemento `<head>` de las páginas:
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+```
+
+También se agregó el paquete JavaScript Bundle antes del cierre de `</body>`:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+La hoja de estilos permite utilizar las clases de diseño y los componentes de Bootstrap. El paquete JavaScript habilita las interacciones de componentes como el menú desplegable de navegación y el carrusel de imágenes.
+
+En las páginas migradas se utilizan las clases de Bootstrap para organizar la presentación, sin depender de las hojas CSS personalizadas anteriores. Los archivos originales se conservan en el repositorio como parte de la versión anterior del proyecto.
+
+### 14.3. Adaptación de la barra de navegación
+
+Se unificó la estructura de la barra de navegación en las cuatro páginas para mantener una presentación consistente.
+
+Se utilizaron las siguientes clases:
+
+- `navbar`: establece el componente de navegación.
+- `navbar-expand-lg`: permite que el menú se expanda en pantallas grandes y se contraiga en pantallas pequeñas.
+- `navbar-dark`: adapta los colores de los elementos para fondos oscuros.
+- `bg-dark`: establece un fondo oscuro.
+- `fixed-top`: mantiene la barra fija en la parte superior.
+- `container`: organiza y centra el contenido.
+- `navbar-brand`: identifica el nombre y el logotipo del sitio.
+- `navbar-toggler`: crea el botón que permite desplegar el menú.
+- `collapse navbar-collapse`: controla la expansión y contracción de los enlaces.
+- `navbar-nav`: organiza los enlaces de navegación.
+- `ms-auto`: desplaza los enlaces hacia el extremo derecho.
+- `nav-link`: define la apariencia de los enlaces.
+
+Se conservaron los destinos de navegación entre Inicio, Tarifas, Reserva y Catálogo. La clase `active` identifica la página que se está visitando.
+
+### 14.4. Organización del contenido mediante Grid
+
+Se utilizó el sistema de cuadrícula de Bootstrap para distribuir los elementos de las páginas.
+
+Entre las clases empleadas se encuentran:
+
+- `container`: establece un contenedor con ancho adaptable.
+- `row`: crea una fila para organizar las columnas.
+- `col-md-6`: ocupa la mitad del espacio disponible desde el breakpoint mediano.
+- `col-lg-3`: ocupa una cuarta parte del espacio disponible desde el breakpoint grande.
+- `g-4`: establece separación entre las columnas y filas.
+- `mx-auto`: centra horizontalmente un elemento mediante márgenes automáticos.
+
+Este sistema permite organizar los contenidos en columnas y modificar su distribución según el ancho de la pantalla.
+
+### 14.5. Adaptación de las tarjetas del catálogo
+
+En `Catalogo.html` se utilizaron tarjetas de Bootstrap para presentar las bicicletas disponibles.
+
+Se emplearon clases como:
+
+- `card`: define la estructura de cada tarjeta.
+- `card-body`: organiza el contenido interior.
+- `card-title`: identifica el título de la tarjeta.
+- `card-text`: presenta la descripción.
+- `img-fluid`: permite que las imágenes se adapten al ancho de su contenedor.
+- `btn`: establece la estructura básica de un botón.
+- `btn-warning`: aplica el estilo de color de Bootstrap.
+
+Se conservaron las seis bicicletas del catálogo, sus imágenes, nombres, descripciones y precios:
+
+1. Urbana Clásica.
+2. Urbana Plegable.
+3. Montaña Trail.
+4. Gravel Aventura.
+5. Eléctrica Urbana.
+6. Infantil.
+
+### 14.6. Adaptación de la tabla de tarifas
+
+En `tarifas.html` se utilizaron las clases de tablas de Bootstrap para organizar la información de los precios.
+
+Entre las clases disponibles se encuentran:
+
+- `table`: aplica el formato base de una tabla.
+- `table-dark`: adapta la tabla a una presentación oscura.
+- `table-striped`: alterna el fondo de las filas.
+- `table-hover`: permite destacar visualmente una fila al pasar el cursor.
+- `table-responsive`: permite desplazar horizontalmente la tabla cuando su contenido no cabe en pantallas pequeñas.
+
+La información de las tarifas se conserva dentro de la estructura de la tabla, sin necesidad de construir manualmente toda su presentación mediante reglas CSS.
+
+### 14.7. Adaptación del formulario de reserva
+
+En `Reserva.html` se reorganizaron los campos del formulario utilizando las clases de formularios de Bootstrap.
+
+Se utilizaron:
+
+- `form-label`: presenta las etiquetas de los campos.
+- `form-control`: establece el estilo de los campos de texto, fecha, número y área de texto.
+- `form-select`: aplica el estilo de Bootstrap a las listas desplegables.
+- `form-check`: organiza la casilla de aceptación de políticas.
+- `btn btn-warning`: aplica el estilo del botón de envío.
+- `w-100`: permite que el botón ocupe todo el ancho disponible.
+
+El formulario conserva sus secciones principales:
+
+1. Datos personales.
+2. Detalles del alquiler.
+3. Observaciones.
+4. Aceptación de las políticas de alquiler.
+
+También se mantienen las restricciones HTML5 de los campos, como `required`, `minlength`, `pattern`, `min`, `max` y `type="email"`.
+
+La incorporación de Bootstrap modifica la presentación del formulario, pero no crea por sí misma un sistema para almacenar o procesar las reservas. El formulario continúa necesitando un servicio de servidor para recibir y gestionar las solicitudes.
+
+### 14.8. Incorporación del carrusel de imágenes
+
+Se incorporó el componente Carousel de Bootstrap para mostrar varias imágenes dentro de una misma sección del sitio.
+
+Su estructura utiliza los siguientes elementos:
+
+- `carousel slide`: establece el componente y su transición.
+- `carousel-inner`: contiene las diapositivas.
+- `carousel-item`: representa cada imagen.
+- `active`: identifica la primera diapositiva que se muestra.
+- `carousel-control-prev`: permite regresar a la imagen anterior.
+- `carousel-control-next`: permite avanzar a la siguiente imagen.
+- `carousel-indicators`: permite identificar y seleccionar las diapositivas.
+
+También se utilizaron clases como `rounded-4` para redondear las esquinas de la sección y `img-fluid` para adaptar las imágenes al espacio disponible.
+
+Para modificar el tamaño de las imágenes se pueden utilizar las utilidades de ancho de Bootstrap, como `w-25`, `w-50`, `w-75` y `w-100`. Estas clases representan porcentajes del ancho del contenedor. Clases como `w-45` y `w-70` no pertenecen a las utilidades estándar de Bootstrap 5.3.8.
+
+En este proyecto se utilizó específicamente la clase `w-25` para reducir el ancho de las imágenes del carrusel al 25% del contenedor. Se complementó con `mx-auto` para centrarlas horizontalmente.
+
+### 14.9. Colores, espaciado y alineación
+
+Se utilizaron diferentes clases de utilidad para establecer la apariencia general del sitio sin depender de reglas CSS individuales para cada elemento.
+
+Algunas de las clases empleadas son:
+
+| Clase | Función |
+|---|---|
+| `bg-black` | Establece un fondo negro. |
+| `bg-dark` | Establece un fondo oscuro. |
+| `text-light` | Aplica un color claro al texto. |
+| `text-white` | Aplica el color blanco al texto. |
+| `text-warning` | Aplica el color de advertencia de Bootstrap al texto. |
+| `btn-warning` | Establece el estilo de advertencia en los botones. |
+| `mt-5` | Agrega margen superior. |
+| `mb-4` | Agrega margen inferior. |
+| `p-4` | Agrega espacio interno. |
+| `mx-auto` | Centra horizontalmente mediante márgenes automáticos. |
+| `rounded-4` | Aplica bordes redondeados. |
+| `shadow` | Agrega una sombra al elemento. |
+
+Estas utilidades permiten modificar aspectos visuales directamente desde las clases de los elementos HTML.
+
+### 14.10. Diseño responsive con Bootstrap
+
+La adaptación a diferentes tamaños de pantalla se realizó utilizando el sistema responsive de Bootstrap.
+
+Sus breakpoints permiten establecer diferentes distribuciones según el ancho del dispositivo. Por ejemplo:
+
+- `col-md-6`: organiza dos columnas a partir del breakpoint mediano.
+- `col-lg-3`: organiza cuatro columnas a partir del breakpoint grande.
+- `navbar-expand-lg`: mantiene el menú expandido en pantallas grandes y utiliza el menú desplegable en pantallas más pequeñas.
+- `img-fluid`: evita que las imágenes superen el ancho disponible de su contenedor.
+- `container`: adapta el ancho del contenido según el tamaño de pantalla.
+
+De esta manera, la distribución de los elementos puede cambiar sin tener que escribir manualmente una media query para cada componente.
+
+### 14.11. Diferencias frente a la versión anterior
+
+La versión original del sitio utilizaba principalmente hojas CSS propias para controlar la navegación, las tarjetas, los formularios, los colores y la distribución responsive.
+
+En la nueva versión se utilizan componentes y utilidades de Bootstrap para resolver esas mismas necesidades.
+
+| Aspecto | Versión anterior | Versión con Bootstrap |
+|---|---|---|
+| Navegación | Estructura y estilos CSS propios. | Componente Navbar de Bootstrap. |
+| Distribución | Flexbox y Grid mediante CSS propio. | Sistema Grid de Bootstrap. |
+| Tarjetas | Clases y estilos personalizados. | Componente Card. |
+| Formularios | Estilos propios para los campos. | Clases de formularios de Bootstrap. |
+| Botones | Estilos personalizados. | Clases como `btn` y `btn-warning`. |
+| Carrusel | No estaba incorporado en la estructura original documentada. | Componente Carousel de Bootstrap. |
+| Responsive | Media queries y reglas propias. | Breakpoints y clases responsive de Bootstrap. |
+
+La principal diferencia es que la nueva implementación aprovecha componentes y utilidades prediseñados, reduciendo la cantidad de estilos que deben escribirse manualmente.
+
+### 14.12. Verificaciones pendientes
+
+Después de la migración es importante comprobar el funcionamiento de todos los elementos en el navegador.
+
+Las verificaciones incluyen:
+
+- Revisar que las cuatro páginas carguen correctamente.
+- Comprobar que los enlaces de la barra de navegación dirijan a sus páginas correspondientes.
+- Verificar que el botón hamburguesa despliegue y oculte el menú.
+- Comprobar que las imágenes del catálogo y del carrusel carguen correctamente.
+- Probar los controles para avanzar y retroceder en el carrusel.
+- Revisar que la tabla de tarifas pueda visualizarse en pantallas pequeñas.
+- Comprobar las validaciones del formulario de reserva.
+- Revisar la distribución del contenido en diferentes tamaños de pantalla.
+- Comprobar que los botones de reserva del catálogo tengan los destinos correspondientes.
+
+Estas comprobaciones deben realizarse en el navegador. La inclusión de las clases de Bootstrap no garantiza por sí sola que todos los enlaces, formularios y botones tengan una funcionalidad completa.
+
+### 14.13. Control de versiones de la migración
+
+La adaptación a Bootstrap se realizó en la rama `bootstrap`, manteniendo separada la rama `main`.
+
+Esta decisión permite conservar la versión anterior y comparar los cambios realizados durante la migración.
+
+Antes de integrar los cambios en `main`, se debe revisar el contenido de ambas ramas, comprobar que las páginas funcionen correctamente y confirmar que no se hayan eliminado recursos necesarios.
+
+La fusión (*merge*) se realizará cuando la nueva versión esté revisada y lista para integrarse al proyecto principal.
