@@ -3,16 +3,16 @@
     margin: 40px auto;
     padding: 40px 40px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--fondo-tarjetas);
+    backdrop-filter: var(--blur-tarjetas);
+    border: 1px solid var(--borde-principal);
     border-radius: 30px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: var(--sombra-tarjetas);
 }
 
 .form-section {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--fondo-seccion);
+    border: 1px solid var(--borde-formulario);
     border-radius: 20px;
     padding: 20px 25px;
     margin-bottom: 20px;
@@ -23,11 +23,11 @@
 }
 
 .form-section-title {
-    color: #ff9966;
+    color: var(--color-secundario);
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 153, 102, 0.2);
+    border-bottom: 1px solid var(--borde-acento-suave);
     padding-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -48,7 +48,7 @@
 .form-group label {
     display: block;
     margin-bottom: 6px;
-    color: aliceblue;
+    color: var(--color-texto);
     font-size: 0.88rem;
     font-weight: bold;
 }
@@ -58,10 +58,10 @@
 .form-group textarea {
     width: 100%;
     padding: 10px 14px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--fondo-input);
+    border: 1px solid var(--borde-principal);
     border-radius: 12px;
-    color: aliceblue;
+    color: var(--color-texto);
     font-family: inherit;
     font-size: 0.9rem;
     box-sizing: border-box;
@@ -71,19 +71,19 @@
 .form-group input:hover,
 .form-group select:hover,
 .form-group textarea:hover {
-    border-color: #ff9966;
+    border-color: var(--color-secundario);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #ff9966;
-    box-shadow: 0 0 8px rgba(255, 153, 102, 0.3);
+    border-color: var(--color-secundario);
+    box-shadow: var(--sombra-input-focus);
 }
 
 .form-group select option {
-    background-color: #121212;
-    color: aliceblue
+    background-color: var(--fondo-opcion);
+    color: var(--color-texto);
     
 }
 
@@ -91,23 +91,23 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--fondo-seccion);
     padding: 15px 20px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--borde-formulario);
     margin-bottom: 20px;
 }
 
 .checkbox-group input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #ff5e62;
+    accent-color: var(--color-primario);
     cursor: pointer;
 }
 
 .checkbox-group label {
     margin-bottom: 0;
-    color: #ccc;
+    color: var(--color-texto-secundario);
     font-size: 0.9rem;
     cursor: pointer;
 }

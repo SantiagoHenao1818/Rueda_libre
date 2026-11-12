@@ -23,18 +23,23 @@
   --fondo-tarjetas-terciario: rgba(255, 255, 255, 0.02);
   --fondo-negro: rgb(0, 0, 0);
   --fondo-input: rgba(0, 0, 0, 0.4);
+  --fondo-seccion: rgba(0, 0, 0, 0.25);
+  --fondo-opcion: #121212;
 
  
   --borde-principal: rgba(255, 255, 255, 0.12);
   --borde-secundario: rgba(255, 255, 255, 0.1);
   --borde-suave: rgba(255, 255, 255, 0.05);
   --borde-acento: rgba(255, 153, 102, 0.4);
+  --borde-acento-suave: rgba(255, 153, 102, 0.2);
+  --borde-formulario: rgba(255, 255, 255, 0.08);
   --borde-footer: #222;
 
   --sombra-tarjetas: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --sombra-botones: 0 0 15px rgba(255, 99, 71, 0.5);
   --sombra-botones-hover: 0 0 20px rgba(255, 99, 71, 0.8);
   --sombra-imagenes: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --sombra-input-focus: 0 0 8px rgba(255, 153, 102, 0.3);
 
   
   --color-facil: #2ecc71;
