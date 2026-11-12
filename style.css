@@ -1,3 +1,56 @@
+
+:root {
+
+  --color-fondo: rgb(10, 10, 10);
+  --color-texto: aliceblue;
+  --color-texto-secundario: #ccc;
+  --color-texto-terciario: #ddd;
+  --color-texto-footer: #777;
+  --color-blanco: white;
+  --color-negro: #0a0a0a;
+
+ 
+  --color-primario: #ff5e62;
+  --color-secundario: #ff9966;
+
+ 
+  --gradiente-principal: linear-gradient(135deg, #ff5e62, #ff9966);
+
+ 
+  --fondo-navbar: rgba(10, 10, 10, 0.85);
+  --fondo-tarjetas: rgba(255, 255, 255, 0.04);
+  --fondo-tarjetas-secundario: rgba(255, 255, 255, 0.03);
+  --fondo-tarjetas-terciario: rgba(255, 255, 255, 0.02);
+  --fondo-negro: rgb(0, 0, 0);
+  --fondo-input: rgba(0, 0, 0, 0.4);
+
+ 
+  --borde-principal: rgba(255, 255, 255, 0.12);
+  --borde-secundario: rgba(255, 255, 255, 0.1);
+  --borde-suave: rgba(255, 255, 255, 0.05);
+  --borde-acento: rgba(255, 153, 102, 0.4);
+  --borde-footer: #222;
+
+  --sombra-tarjetas: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --sombra-botones: 0 0 15px rgba(255, 99, 71, 0.5);
+  --sombra-botones-hover: 0 0 20px rgba(255, 99, 71, 0.8);
+  --sombra-imagenes: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+  
+  --color-facil: #2ecc71;
+  --color-medio: #f1c40f;
+  --color-dificil: #e74c3c;
+
+  
+  --fondo-facil: rgba(46, 204, 113, 0.2);
+  --fondo-medio: rgba(241, 196, 15, 0.2);
+  --fondo-dificil: rgba(231, 76, 60, 0.2);
+
+ 
+  --blur-navbar: blur(12px);
+  --blur-tarjetas: blur(10px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +62,12 @@ html {
 }
 
 body {
-  background-color: rgb(10, 10, 10);
-  color: aliceblue;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 100px;
 }
+
 
 nav.Navbar {
   position: fixed;
@@ -27,8 +81,8 @@ nav.Navbar {
   align-items: center;
   padding: 12px 28px;
   border: 1px solid rgb(246 162 26 / 15%);
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(12px);
+  background: var(--fondo-navbar);
+  backdrop-filter: var(--blur-navbar);
   border-radius: 40px;
   z-index: 1000;
 }
@@ -54,7 +108,7 @@ nav.Navbar {
 }
 
 .menu-checkbox:focus-visible + .menu-hamburguesa {
-  outline: 3px solid aliceblue;
+  outline: 3px solid var(--color-texto);
   outline-offset: 5px;
 }
 
@@ -62,7 +116,7 @@ nav.Navbar {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: aliceblue;
+  background-color: var(--color-texto);
 }
 
 .logo {
@@ -79,7 +133,7 @@ nav.Navbar {
 .logo-text {
   font-weight: bold;
   font-size: 1.1rem;
-  color: aliceblue;
+  color: var(--color-texto);
 }
 
 .nav-links {
@@ -104,13 +158,13 @@ nav.Navbar {
 }
 
 nav.Navbar .active {
-  background: linear-gradient(135deg, #ff5e62, #ff9966);
+  background: var(--gradiente-principal);
   color: rgba(240, 248, 255, 0.8);
   font-weight: 700;
 }
 
 .nav-links a.active:hover {
-  color: #0a0a0a;
+  color: var(--color-negro);
 }
 
 a:focus-visible,
@@ -118,7 +172,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid aliceblue;
+  outline: 3px solid var(--color-texto);
   outline-offset: 3px;
 }
 
@@ -133,19 +187,21 @@ a:hover {
   scroll-margin-top: 550px;
 }
 
+
 .Boton-1 {
-  background: linear-gradient(135deg, #ff5e62, #ff9966);
-  color: white;
+  background: var(--gradiente-principal);
+  color: var(--color-blanco);
   border: none;
   padding: 10px 22px;
   border-radius: 30px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+  box-shadow: var(--sombra-botones);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
+
 .dapage {
   width: 120px;
   font-weight: bold;
@@ -153,8 +209,9 @@ a:hover {
 
 .Boton-1:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
+  box-shadow: var(--sombra-botones-hover);
 }
+
 
 .hero {
   display: flex;
@@ -171,15 +228,15 @@ a:hover {
   flex: 1;
   min-width: 300px;
   padding: 35px 30px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--fondo-tarjetas);
+  backdrop-filter: var(--blur-tarjetas);
+  border: 1px solid var(--borde-principal);
   border-radius: 30px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: var(--sombra-tarjetas);
 }
 
 .title {
-  color: aliceblue;
+  color: var(--color-texto);
   text-align: left;
   font-size: 2.8rem;
   margin-bottom: 12px;
@@ -187,7 +244,7 @@ a:hover {
 
 .subtitle {
   text-align: left;
-  color: #ccc;
+  color: var(--color-texto-secundario);
   font-size: 1.15rem;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -203,7 +260,7 @@ a:hover {
   height: auto;
   border-radius: 40px;
   object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--sombra-imagenes);
 }
 
 .setting-logo {
@@ -215,6 +272,7 @@ a:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+
 .section-container {
   max-width: 1200px;
   margin: 60px auto;
@@ -223,7 +281,7 @@ a:hover {
 
 .section-container h2 {
   margin-bottom: 25px;
-  color: #ff9966;
+  color: var(--color-secundario);
   font-size: 2rem;
 }
 
@@ -265,23 +323,23 @@ a:hover {
   align-items: center;
   padding: 30px;
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--borde-principal);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .card-front {
-  background: rgb(0, 0, 0);
-  color: aliceblue;
+  background: var(--fondo-negro);
+  color: var(--color-texto);
 }
 
 .card-front h3 {
   font-size: 1.4rem;
-  color: #ff9966;
+  color: var(--color-secundario);
 }
 
 .card-back {
-  background: linear-gradient(135deg, #ff5e62, #ff9966);
-  color: #fff;
+  background: var(--gradiente-principal);
+  color: var(--color-blanco);
   transform: rotateY(180deg);
   text-align: center;
 }
@@ -296,12 +354,11 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-
 }
 
 .paso-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--fondo-tarjetas-secundario);
+  border: 1px solid var(--borde-secundario);
   padding: 25px;
   border-radius: 20px;
   text-align: center;
@@ -310,18 +367,18 @@ a:hover {
 
 .paso-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 153, 102, 0.4);
+  border-color: var(--borde-acento);
 }
 
 .paso-numero {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #ff9966;
+  color: var(--color-secundario);
   margin-bottom: 10px;
 }
 
 .beneficios-container {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--fondo-tarjetas-terciario);
   border: 1px solid rgba(246, 162, 26, 0.1);
   padding: 40px;
   border-radius: 30px;
@@ -331,10 +388,11 @@ a:hover {
 footer {
   text-align: center;
   padding: 30px;
-  color: #777;
-  border-top: 1px solid #222;
+  color: var(--color-texto-footer);
+  border-top: 1px solid var(--borde-footer);
   margin-top: 50px;
 }
+
 
 @media (max-width: 768px) {
   .hero {
@@ -386,8 +444,8 @@ footer {
   width: 100%;
   overflow-x: auto;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid var(--borde-principal);
+  box-shadow: var(--sombra-tarjetas);
   margin-bottom: 30px;
 }
 
@@ -395,13 +453,13 @@ footer {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
+  background: var(--fondo-tarjetas-secundario);
+  backdrop-filter: var(--blur-tarjetas);
 }
 
 .tabla-tarifas th {
   background: rgba(255, 153, 102, 0.15);
-  color: #ff9966;
+  color: var(--color-secundario);
   padding: 16px 20px;
   font-size: 1rem;
   font-weight: bold;
@@ -411,7 +469,7 @@ footer {
 .tabla-tarifas td {
   padding: 16px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: #ddd;
+  color: var(--color-texto-terciario);
   font-size: 0.98rem;
 }
 
@@ -425,13 +483,14 @@ footer {
 
 .tabla-tarifas td.destacado {
   font-weight: bold;
-  color: aliceblue;
+  color: var(--color-texto);
 }
 
 .tabla-tarifas td.precio {
   font-weight: bold;
-  color: #ff9966;
+  color: var(--color-secundario);
 }
+
 
 .badge {
   padding: 5px 12px;
@@ -440,36 +499,38 @@ footer {
   font-weight: bold;
   display: inline-block;
 }
+
 .badge.facil {
-  background: rgba(46, 204, 113, 0.2);
-  color: #2ecc71;
+  background: var(--fondo-facil);
+  color: var(--color-facil);
   border: 1px solid rgba(46, 204, 113, 0.4);
 }
 
 .badge.medio {
-  background: rgba(241, 196, 15, 0.2);
-  color: #f1c40f;
+  background: var(--fondo-medio);
+  color: var(--color-medio);
   border: 1px solid rgba(241, 196, 15, 0.4);
 }
 
 .badge.dificil {
-  background: rgba(231, 76, 60, 0.2);
-  color: #e74c3c;
+  background: var(--fondo-dificil);
+  color: var(--color-dificil);
   border: 1px solid rgba(231, 76, 60, 0.4);
 }
+
 
 .container-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--borde-secundario);
 }
 
 .container-benefi {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  background: rgb(0, 0, 0);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--fondo-negro);
+  border: 1px solid var(--borde-secundario);
   padding: 25px;
   border-radius: 20px;
   text-align: center;
@@ -477,7 +538,7 @@ footer {
 }
 
 .info-box {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--fondo-tarjetas-secundario);
   border: 1px solid rgba(246, 162, 26, 0.2);
   border-radius: 25px;
   padding: 30px;
@@ -485,7 +546,7 @@ footer {
 }
 
 .info-box h3 {
-  color: #ff9966;
+  color: var(--color-secundario);
   margin-bottom: 20px;
   font-size: 1.4rem;
 }
@@ -500,10 +561,10 @@ footer {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--fondo-tarjetas-terciario);
   padding: 15px 20px;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--borde-suave);
 }
 
 .info-icon {
@@ -511,33 +572,35 @@ footer {
 }
 
 .info-item p {
-  color: #ccc;
+  color: var(--color-texto-secundario);
   font-size: 0.95rem;
   line-height: 1.4;
 }
+
 
 .Footer {
   padding: 4rem;
   display: flex;
   justify-content: space-around;
-  color: aliceblue;
+  color: var(--color-texto);
 
-   .title-footer {
-    color: #ff9966;
-   }
+  .title-footer {
+    color: var(--color-secundario);
+  }
 }
+
 .footer-servicios {
   display: flex;
   flex-direction: column;
 
   a {
     text-decoration: none;
-    color: aliceblue;
+    color: var(--color-texto);
   }
 }
 
 .footer-servicios a:hover {
-  color: #ff9966;
+  color: var(--color-secundario);
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
@@ -551,7 +614,7 @@ footer {
   object-fit: contain;
 }
 
-.move-ulti{
+.move-ulti {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: stretch;
@@ -559,13 +622,16 @@ footer {
   grid-column: span 4;
 }
 
-.Boton-wpp{
+
+.Boton-wpp {
   width: 50px;
   height: auto;
-  
-  }
-  
+  position: fixed;
+  bottom: 1.5rem; 
+  right: 1.5rem;
 
+
+}
 
 
 @media (max-width: 1200px) {
@@ -575,7 +641,6 @@ footer {
   }
 }
 
-
 @media (max-width: 768px) {
   .move-ulti {
     grid-template-columns: 1fr;
@@ -583,7 +648,7 @@ footer {
   }
 }
 
- .price{
-    padding: 1rem;
-        color: #ff9966;
-    }
+.price {
+  padding: 1rem;
+  color: var(--color-secundario);
+}
