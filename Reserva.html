@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Reserva || Rueda y Pedal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="variables.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="bg-black text-light">
@@ -84,7 +86,13 @@
                                         name="nombre"
                                         required
                                         minlength="3"
+                                        pattern=".{3,}"
+                                        title="Escribe tu nombre completo (mínimo 3 caracteres)."
                                         placeholder="Ej. Santiago Pérez">
+
+                                    <div class="invalid-feedback">
+                                        Escribe tu nombre completo (mínimo 3 caracteres).
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -98,8 +106,12 @@
                                         name="documento"
                                         required
                                         pattern="[0-9]{6,10}"
-                                        title="Debe contener entre 6 y 10 dígitos numéricos"
+                                        title="El documento debe tener entre 6 y 10 dígitos, solo números."
                                         placeholder="Ej. 3000123456">
+
+                                    <div class="invalid-feedback">
+                                        El documento debe tener entre 6 y 10 dígitos, solo números.
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -112,7 +124,13 @@
                                         id="correo"
                                         name="correo"
                                         required
+                                        pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}"
+                                        title="Escribe un correo válido, por ejemplo: correo@ejemplo.com"
                                         placeholder="correo@ejemplo.com">
+
+                                    <div class="invalid-feedback">
+                                        Escribe un correo válido, por ejemplo: correo@ejemplo.com
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -126,8 +144,12 @@
                                         name="celular"
                                         required
                                         pattern="3[0-9]{9}"
-                                        title="Debe ser un número de 10 dígitos y comenzar por 3"
+                                        title="El celular debe tener 10 dígitos y empezar por 3."
                                         placeholder="Ej. 3001234567">
+
+                                    <div class="invalid-feedback">
+                                        El celular debe tener 10 dígitos y empezar por 3.
+                                    </div>
                                 </div>
 
                             </div>
@@ -151,7 +173,12 @@
                                         name="fecha_alquiler"
                                         required
                                         min="2026-11-01"
-                                        max="2026-12-31">
+                                        max="2026-12-31"
+                                        title="Selecciona una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.">
+
+                                    <div class="invalid-feedback">
+                                        Selecciona una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -166,7 +193,12 @@
                                         required
                                         min="1"
                                         max="6"
+                                        title="Indica cuántas bicicletas quieres (entre 1 y 6)."
                                         value="1">
+
+                                    <div class="invalid-feedback">
+                                        Indica cuántas bicicletas quieres (entre 1 y 6).
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -177,7 +209,8 @@
                                     <select class="form-select"
                                         id="tipo_bicicleta"
                                         name="tipo_bicicleta"
-                                        required>
+                                        required
+                                        title="Selecciona el tipo de bicicleta.">
 
                                         <option value="">-- Seleccione una opción --</option>
                                         <option value="montana">Montaña</option>
@@ -186,6 +219,10 @@
                                         <option value="electrica">Eléctrica</option>
 
                                     </select>
+
+                                    <div class="invalid-feedback">
+                                        Selecciona el tipo de bicicleta.
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -196,7 +233,8 @@
                                     <select class="form-select"
                                         id="plan"
                                         name="plan"
-                                        required>
+                                        required
+                                        title="Selecciona el plan de alquiler.">
 
                                         <option value="">-- Seleccione una opción --</option>
                                         <option value="horas">Por Horas</option>
@@ -204,6 +242,10 @@
                                         <option value="semana">Semanal</option>
 
                                     </select>
+
+                                    <div class="invalid-feedback">
+                                        Selecciona el plan de alquiler.
+                                    </div>
                                 </div>
 
                             </div>
@@ -225,8 +267,13 @@
                                     id="comentarios"
                                     name="comentarios"
                                     maxlength="300"
+                                    title="El comentario no puede superar los 300 caracteres."
                                     rows="3"
                                     placeholder="Comentarios opcionales (máx. 300 caracteres)"></textarea>
+
+                                <div class="invalid-feedback">
+                                    El comentario no puede superar los 300 caracteres.
+                                </div>
 
                             </div>
                         </section>
@@ -237,7 +284,12 @@
                                 class="form-check-input"
                                 id="politicas"
                                 name="politicas"
-                                required>
+                                required
+                                title="Debes aceptar las políticas de alquiler para continuar.">
+
+                            <div class="invalid-feedback">
+                                Debes aceptar las políticas de alquiler para continuar.
+                            </div>
 
                             <label class="form-check-label" for="politicas">
                                 Acepto las políticas de alquiler *
