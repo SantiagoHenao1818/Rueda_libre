@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Rueda y Pedal · variables.css
+   --------------------------------------------------------------------------
+   Paleta central de TODO el sitio.
+
+   Regla de la casa: ningún color se escribe directamente en `style.css`.
+   Todo se declara aquí dentro de `:root` y se consume con `var(--...)`.
+
+   La última sección mapea estas variables a las que usa Bootstrap 5.3,
+   de modo que las clases utilitarias del framework (`text-warning`,
+   `btn-warning`, `bg-dark`, `text-bg-success`, ...) también se alimentan
+   de esta misma paleta.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. MARCA
+     Acento naranja y su extremo rojo. Sobre fondo oscuro mantienen
+     9.43:1 y 6.63:1 de contraste con texto #0A0A0A.
+     ------------------------------------------------------------------------ */
+  --color-accent: #ff9966;
+  --color-accent-rgb: 255, 153, 102;
+  --color-accent-strong: #ff5e62;
+  --color-accent-strong-rgb: 255, 94, 98;
+  --color-accent-contrast: #0a0a0a;
+
+  /* ------------------------------------------------------------------------
+     2. SUPERFICIES
+     ------------------------------------------------------------------------ */
+  --color-bg: #000000; /* fondo de página (bg-black) */
+  --color-bg-soft: #0a0a0a; /* negro suave usado por los componentes */
+  --color-surface: #212529; /* tarjetas, barra de navegación (bg-dark) */
+  --color-surface-rgb: 33, 37, 41;
+  --color-surface-alt: #121212; /* campos de formulario y opciones */
+  --color-surface-stripe: #2c3034; /* filas alternadas de tabla */
+  --color-surface-hover: #323539; /* fila de tabla al pasar el cursor */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* ------------------------------------------------------------------------
+     3. TEXTO
+     ------------------------------------------------------------------------ */
+  --color-text: #f0f8ff; /* AliceBlue, texto principal (18.46:1) */
+  --color-text-rgb: 240, 248, 255;
+  --color-text-strong: #f8f9fa; /* text-light */
+  --color-text-strong-rgb: 248, 249, 250;
+  --color-text-muted: #6c757d; /* text-secondary / border-secondary */
+  --color-text-muted-rgb: 108, 117, 125;
+
+  /* ------------------------------------------------------------------------
+     4. BORDES
+     ------------------------------------------------------------------------ */
+  --color-border-strong: #4d5154; /* separadores de tabla */
+  --color-border-muted: #495057; /* borde de campos y tarjetas */
+  --color-border-glass: rgba(255, 255, 255, 0.12); /* hairline translúcido */
+
+  /* ------------------------------------------------------------------------
+     5. ESTADOS
+     ------------------------------------------------------------------------ */
+  --color-success: #198754;
+  --color-success-rgb: 25, 135, 84;
+  --color-danger: #dc3545;
+  --color-danger-rgb: 220, 53, 69;
+
+  /* ------------------------------------------------------------------------
+     6. TRANSLÚCIDOS Y SOMBRAS
+     ------------------------------------------------------------------------ */
+  --accent-ring: rgba(255, 153, 102, 0.3); /* halo de foco */
+  --shadow-panel: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* ------------------------------------------------------------------------
+     7. TIPOGRAFÍA
+     ------------------------------------------------------------------------ */
+  --font-family: Arial, Helvetica, sans-serif;
+
+  /* ------------------------------------------------------------------------
+     8. ESPACIADOS Y RADIOS
+     ------------------------------------------------------------------------ */
+  --radius-sm: 12px;
+  --radius-lg: 20px;
+  --space-table: 30px;
+  --space-footer: 50px;
+}
+
+/* ==========================================================================
+   MAPEO A BOOTSTRAP 5.3
+   --------------------------------------------------------------------------
+   Estas variables alimentan las clases utilitarias del framework, de modo que
+   el color de fondo, de texto, de bordes y de estados también sale de la
+   paleta declarada arriba.
+   ========================================================================== */
+:root {
+  --bs-body-bg: var(--color-bg-soft);
+  --bs-body-color: var(--color-text);
+  --bs-body-color-rgb: var(--color-text-rgb);
+  --bs-border-color: var(--color-border-muted);
+
+  --bs-black-rgb: 0, 0, 0; /* = --color-black */
+  --bs-white-rgb: 255, 255, 255; /* = --color-white */
+  --bs-dark-rgb: var(--color-surface-rgb);
+  --bs-light-rgb: var(--color-text-strong-rgb);
+  --bs-secondary-rgb: var(--color-text-muted-rgb);
+
+  /* El acento de marca sustituye al amarillo de Bootstrap. */
+  --bs-warning-rgb: var(--color-accent-rgb);
+  --bs-success-rgb: var(--color-success-rgb);
+  --bs-danger-rgb: var(--color-danger-rgb);
+
+  /* Halo de foco en el color de marca. */
+  --bs-focus-ring-color: var(--accent-ring);
+}
