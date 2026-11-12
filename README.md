@@ -636,3 +636,22 @@ Esta decisión permite conservar la versión anterior y comparar los cambios rea
 Antes de integrar los cambios en `main`, se debe revisar el contenido de ambas ramas, comprobar que las páginas funcionen correctamente y confirmar que no se hayan eliminado recursos necesarios.
 
 La fusión (*merge*) se realizará cuando la nueva versión esté revisada y lista para integrarse al proyecto principal.
+
+### 15. Ampliaciones y mejoras en la versión con Bootstrap
+
+#### 15.1. Validación visual de formularios con Bootstrap
+Se integró el sistema de validación de formularios de Bootstrap combinándolo con las restricciones nativas de HTML5 (`required`, `minlength`, `pattern`, `min`, `max`, `type="email"`). 
+
+* **Clases de estado:** Bootstrap aplica de forma dinámica clases como `.is-invalid` (para marcar campos con errores o datos que no cumplen el patrón) y `.is-valid` (para entradas correctas).
+* **Feedback visual:** El navegador y los estilos del framework despliegan bordes de advertencia y mensajes claros que guían al usuario para corregir la información antes de intentar el envío.
+
+#### 15.2. Centralización de colores mediante variables CSS (`:root`)
+Para mantener la identidad visual del proyecto sin depender exclusivamente de la paleta por defecto de Bootstrap, se definió un bloque de variables globales (`:root`) en la hoja de estilos personalizada.
+
+* **Ventaja:** Permite gestionar de manera centralizada los colores corporativos (fondos oscuros, textos principales y tonos de acento). Modificando el valor en `:root`, este se actualiza de forma automática en todos los componentes que lo utilicen, asegurando consistencia cromática en las cuatro páginas.
+
+#### 15.3. Botón flotante de WhatsApp transversal
+Se incorporó un botón flotante de acceso directo a WhatsApp en la esquina inferior derecha de todas las páginas del sitio (`index.html`, `tarifas.html`, `Catalogo.html` y `Reserva.html`).
+
+* **Comportamiento:** Cuenta con posicionamiento fijo (`position: fixed`), lo que garantiza que permanezca visible y accesible para el usuario en todo momento mientras realiza desplazamiento vertical (*scroll*).
+* **Funcionalidad:** Enlaza directamente a una URL de WhatsApp (`https://wa.me/573001234567?text=Hola,%20quiero%20más%20información%20sobre%20el%20alquiler%20de%20bicicletas.`) con un mensaje de consulta preconfigurado, agilizando el canal de comunicación directa para la reserva o resolución de dudas de los clientes.
